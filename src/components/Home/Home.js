@@ -11,19 +11,24 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h1>FISH STORE 06.24.2019:</h1>
-        <br />
-        <h2>YOU ARE LOGGED IN</h2>
-        <br />
+        <p>(YOU ARE LOGGED IN)</p>
+
+          <br />
+
         <div className="row">
+
           <div className="col">
             <Inventory />
           </div>
+
           <div className="col">
-          <NewOrder />
-            </div>
+            <NewOrder />
+          </div>
+
           <div className="col">
             <Orders />
           </div>
+
         </div>
       </div>
     );
