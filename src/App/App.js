@@ -1,5 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
@@ -13,6 +15,16 @@ fbConnection(); // Firebase Init connection.js => firebaseApp()
 class App extends React.Component {
   state = {
     authed: false,
+  }
+
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
   }
 
   render() {
