@@ -10,8 +10,6 @@ class Home extends React.Component {
         <br />
         <h2>YOU ARE LOGGED IN</h2>
         <h1>Home</h1>
-        <br />
-        <button className="logout-btn btn btn-secondary">Logout</button>
       </div>
     );
   }
