@@ -1,14 +1,53 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+import Auth from '../components/Auth/Auth';
+import Home from '../components/Home/Home';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
+
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>FISH STORE 06.24.2019</h1>
-      <button className='btn btn-danger'>Fish Store</button>
-    </div>
-  );
+import fbConnection from '../helpers/data/connection';
+
+fbConnection(); // Firebase Init connection.js => firebaseApp()
+
+class App extends React.Component {
+  state = {
+    authed: false,
+  }
+
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
+  render() {
+    const { authed } = this.state;
+    const loadComponent = () => {
+      if (authed) {
+        return <Home />;
+      }
+      return <Auth />;
+    };
+
+    return (
+      <div className="App">
+        <MyNavbar authed={authed} />
+        {loadComponent()}
+      </div>
+    );
+  }
 }
 
 export default App;
