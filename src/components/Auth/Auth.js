@@ -5,11 +5,11 @@ import 'firebase/auth';
 import './Auth.scss';
 
 class Auth extends React.Component {
-  // loginClickEvent = (e) => {
-  //   e.preventDefault();
-  //   const provider = new firebase.auth.GoogleAuthProvider();
-  //   firebase.auth().signInWithPopup(provider);
-  // };
+  loginClickEvent = (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+  };
 
   render() {
     return (
@@ -18,6 +18,7 @@ class Auth extends React.Component {
         <br />
         <h2>Login:</h2>
         <h1>Auth</h1>
+        <button className="auth-btn btn btn-secondary" onClick={this.loginClickEvent}>Login With Google</button>
       </div>
     );
   }
