@@ -17,7 +17,6 @@ class Auth extends React.Component {
         <h1>FISH STORE 06.24.2019:</h1>
         <br />
         <h2>Login:</h2>
-        <h1>Auth</h1>
         <button className="auth-btn btn btn-secondary" onClick={this.loginClickEvent}>Login With Google</button>
       </div>
     );
