@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import fishShape from '../../helpers/propz/fishShapes';
+import fishShapes from '../../helpers/propz/fishShapes';
 import format from '../../helpers/format';
 
 import './fish.scss';
 
 class Fish extends React.Component {
   static propTypes = {
-    fish: fishShape.fishShape,
-  }
+    fishes: PropTypes.arrayOf(fishShapes.fishShape),
+  };
 
   render() {
     const { fish } = this.props;
