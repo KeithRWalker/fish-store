@@ -9,6 +9,13 @@ import './fish.scss';
 class Fish extends React.Component {
   static propTypes = {
     fishes: PropTypes.arrayOf(fishShapes.fishShape),
+    addFishToOrder: PropTypes.func.isRequired,
+  };
+
+  addClickEvent = (e) => {
+    const { fish, addFishToOrder } = this.props;
+    e.preventDefault();
+    addFishToOrder(fish.id);
   };
 
   render() {
@@ -33,6 +40,7 @@ class Fish extends React.Component {
 
         <button className="btn btn-danger"
           disabled={!isAvailable}
+          onClick={this.addClickEvent}
         >
           {isAvailable ? 'Add To Order' : 'Sold Out!'}
         </button>
