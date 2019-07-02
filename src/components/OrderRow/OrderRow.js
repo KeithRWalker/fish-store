@@ -26,7 +26,7 @@ class OrderRow extends React.Component {
         <th>{order.name}</th>
         <td>{moment(order.dateTime).format('LLL')}</td>
         <td>{numFish}</td>
-        <td><button className="btn btn-danger" onClick={this.deleteOrderEvent}>X</button></td>
+        <td><button className="btn btn-outline-danger" onClick={this.deleteOrderEvent}>X</button></td>
       </tr>
     );
   }

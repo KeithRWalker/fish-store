@@ -38,7 +38,7 @@ class Fish extends React.Component {
 
         <p>{fish.desc}</p>
 
-        <button className="btn btn-danger"
+        <button className="btn btn-outline-success"
           disabled={!isAvailable}
           onClick={this.addClickEvent}
         >
