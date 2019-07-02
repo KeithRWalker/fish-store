@@ -2,3 +2,24 @@
   display: block;
   border: .5em double aliceblue;
 }
+
+.order-row{
+  border-bottom: 1px solid aliceblue;
+  padding-bottom: 0px;
+}
+
+.delete-item-btn{
+  margin-bottom: 10px;
+}
+
+.order-input-form{
+  background-color: gray;
+}
+
+.order-input-form::active{
+  background-color: grey;
+}
+
+.order-input-form::placeholder{
+  color: aliceblue;
+}
