@@ -40,7 +40,7 @@ class Home extends React.Component {
   }
 
   addFishToOrder = (fishId) => {
-    const fishOrderCopy = { ...this.setState.fishOrder };
+    const fishOrderCopy = { ...this.state.fishOrder };
     fishOrderCopy[fishId] = fishOrderCopy[fishId] + 1 || 1;
     this.setState({ fishOrder: fishOrderCopy });
   }
