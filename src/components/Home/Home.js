@@ -28,7 +28,7 @@ class Home extends React.Component {
   componentDidMount() {
     fishData.getFishes()
       .then(fishes => this.setState({ fishes }))
-      .catch(err => console.error('could not get fishes', err));
+      .catch(err => console.error('could not get fishess', err));
 
     this.getOrders();
   }
